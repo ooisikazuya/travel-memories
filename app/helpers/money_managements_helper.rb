@@ -1,0 +1,2 @@
+module MoneyManagementsHelper
+end
