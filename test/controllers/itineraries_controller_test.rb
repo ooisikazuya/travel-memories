@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class ItineraryControllerTest < ActionDispatch::IntegrationTest
+class ItinerariesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get itinerary_index_url
+    get itineraries_index_url
     assert_response :success
   end
 
