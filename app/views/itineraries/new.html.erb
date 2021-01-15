@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="bg-warning text-white text-center">新しいしおりの追加</h1>
+</div><br>
+<div class="container">
+  <h3 class=" text-info">グループ名</h3><br>
+  <div class="row">      
+    <div class="col-5">
+      <select class="custom-select border-info">
+        <option selected>選択してください</option>
+        <option value="1">しおり名</option>
+        <option value="2">しおり名</option>
+      </select>
+    </div>
+  </div>
+</div><br><br>
+<div class="container">
+  <h3 class=" text-info">しおり名</h3><br>
+  <div class="row">      
+    <div class="col-5">
+      <form>
+        <div class="form-group">
+          <input type="itinerary_name" class="form-control border-info">
+        </div>
+      </form>
+    </div>
+  </div>
+</div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="actions">
+        <%= submit_tag "しおりを追加する", class: "btn btn-success btn-lg float-right" %>
+      </div>
+    </div>
+  </div>
+</div><br><br>  

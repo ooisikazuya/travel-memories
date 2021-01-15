@@ -8,7 +8,7 @@
         <div class="card">
           <h5 class="card-header bg-danger text-white">しおりの編集・閲覧</h5>
           <div class="card-body">
-            <p class="card-text"></p>
+            <p class="card-text">旅行のしおりを簡単に作成できます。しおりに書く内容はそれぞれにお任せします。</p>
             <%= link_to "編集・閲覧", itineraries_path, class: 'btn btn-success text-white float-right' %>
           </div>
         </div>
@@ -17,8 +17,8 @@
         <div class="card">
           <h5 class="card-header bg-primary text-white">お金の管理</h5>
           <div class="card-body">
-            <p class="card-text"></p>
-            <%= link_to "編集", itineraries_path, class: 'btn btn-success text-white float-right' %>
+            <p class="card-text">旅行の際にかかる必要経費、お土産などの旅行中に使ったお金を簡単に記録できます。</p>
+            <%= link_to "記録", money_managements_path, class: 'btn btn-success text-white float-right' %>
           </div>
         </div>
       </div>
@@ -33,12 +33,12 @@
             <table class="table">
               <tbody>
                 <tr>
-                  <td class="h4 text-info">グループ名</td>                  
+                  <td class="h5 text-info">グループ名</td>                  
                   <td>しおりの数 3</td>
                   <td>メンバー数 4</td>
                 </tr>
                 <tr>
-                  <td class="h4 text-info">グループ名</td>                  
+                  <td class="h5 text-info">グループ名</td>                  
                   <td>しおりの数 2</td>
                   <td>メンバー数 3</td>
                 </tr>                  
