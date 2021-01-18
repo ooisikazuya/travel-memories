@@ -1,0 +1,51 @@
+<div class="container">
+  <h2 class="text-info">ようこそ、<%= "#{@user.nickname}" %>さん！</h2>
+</div><br>
+<div class="container">
+  <div class="row"> 
+    <div class="col-6">
+      <div class="card">
+        <h5 class="card-header bg-danger text-white">しおりの編集・閲覧</h5>
+        <div class="card-body">
+          <p class="card-text">旅行のしおりを簡単に作成できます。しおりに書く内容はそれぞれにお任せします。</p>
+          <%= link_to "編集・閲覧", itineraries_path, class: 'btn btn-success text-white float-right' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <h5 class="card-header bg-primary text-white">お金の管理</h5>
+        <div class="card-body">
+          <p class="card-text">旅行の際にかかる必要経費、お土産などの旅行中に使ったお金を簡単に記録できます。</p>
+          <%= link_to "記録", money_managements_path, class: 'btn btn-success text-white float-right' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+<div class="container">
+  <div class="row"> 
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header bg-warning text-white">所属グループ</h5>
+        <div class="card-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="h5 text-info">グループ名</td>                  
+                <td>しおりの数 3</td>
+                <td>メンバー数 4</td>
+              </tr>
+              <tr>
+                <td class="h5 text-info">グループ名</td>                  
+                <td>しおりの数 2</td>
+                <td>メンバー数 3</td>
+              </tr>                  
+            </tbody>
+          </table>
+          <%= link_to "グループ作成・加入", new_group_path, class: 'btn btn-success text-white float-right' %>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
