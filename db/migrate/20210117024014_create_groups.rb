@@ -3,10 +3,11 @@ class CreateGroups < ActiveRecord::Migration[5.2]
     create_table :groups do |t|
       t.string :name, null: false, default: ""
       t.string :password, null: false, default: ""
+      t.index :name, unique: true
+      t.index :password, unique: true
 
       t.timestamps
 
-      add_index :groups, [:name, :password], unique: true
     end
   end
 end

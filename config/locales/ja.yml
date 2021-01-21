@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      group:
+        name: グループ名
+        password: パスワード
