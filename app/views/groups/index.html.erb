@@ -1,4 +1,11 @@
 <div class="container">
+  <% if flash[:notice] %>
+    <h2 class="flash bg-primary text-white text-center">
+      <%= flash[:notice] %>
+    </h2>
+  <% end %>
+</div><br>
+<div class="container">
   <h2 class="text-info">ようこそ、<%= "#{@user.nickname}" %>さん！</h2>
 </div><br>
 <div class="container">
@@ -48,4 +55,4 @@
       </div>
     </div>
   </div> 
-</div>
+</div><br><br>

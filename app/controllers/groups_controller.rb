@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
     @group = @user.groups.new(group_params)
     @group.save!
     GroupUser.create(group: @group, user: @user)
+    flash[:notice] = "グループを作成しました！"
     redirect_to groups_path
   rescue
     render :new
@@ -20,6 +21,6 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, :password)
+    params.require(:group).permit(:name, :password, user_ids: [])
   end
 end
