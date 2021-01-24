@@ -38,16 +38,13 @@
         <div class="card-body">
           <table class="table">
             <tbody>
-              <tr>
-                <td class="h5 text-info">グループ名</td>                  
-                <td>しおりの数 3</td>
-                <td>メンバー数 4</td>
-              </tr>
-              <tr>
-                <td class="h5 text-info">グループ名</td>                  
-                <td>しおりの数 2</td>
-                <td>メンバー数 3</td>
-              </tr>                  
+              <% @groups.each do |group|%>
+                <tr>
+                  <td class="h5 text-info"><%= group.name %></td>                  
+                  <td>しおりの数 ?</td>
+                  <td>メンバー数 <%= group.users.length %></td>
+                </tr>
+              <% end %>            
             </tbody>
           </table>
           <%= link_to "グループ作成・加入", new_group_path, class: 'btn btn-success text-white float-right' %>

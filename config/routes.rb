@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :users
   resources :itineraries
   resources :money_managements
-  resources :groups, only: [:index, :new, :create]
+  resources :groups, only: [:index, :new, :create] do
+    post 'join', on: :collection
+  end
+
   root 'top#index'  
 end

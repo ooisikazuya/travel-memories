@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def index
     @user = current_user
+    @groups = Group.where(id: @user.group_users.pluck(:group_id))
   end
 
   def new
@@ -19,6 +20,18 @@ class GroupsController < ApplicationController
     render :new
   end
 
+  def join
+    group = Group.find_by(password: params[:password])
+    unless group
+      flash[:notice] = "グループが見つかりませんでした"
+      @group = Group.new
+      render :new and return
+    end
+    group.group_users.find_or_create_by(user: current_user)
+    flash[:notice] = "グループに加入しました！"
+    redirect_to groups_path
+  end
+  
   private
   def group_params
     params.require(:group).permit(:name, :password, user_ids: [])
