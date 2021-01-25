@@ -9,6 +9,12 @@
   <h2 class="text-info">メールアドレス</h2>
   <h3><%= @user.email %><h3>
 </div><br>
+<% if @user.image? %>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @user.image.url %>
+  </p>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-5">

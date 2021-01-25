@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
   validates :nickname, presence: true
+  mount_uploader :image, ImageUploader
 end
