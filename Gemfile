@@ -65,3 +65,5 @@ gem 'devise'
 gem 'chartkick'
 gem 'rails-i18n'
 gem 'carrierwave', '~> 2.0'
+gem "jquery-rails"
+gem 'mini_magick'

@@ -1,37 +1,32 @@
 <div class="container">
   <h1 class="bg-warning text-white text-center">新しいしおりの追加</h1>
 </div><br>
-<div class="container">
-  <h3 class=" text-info">グループ名</h3><br>
-  <div class="row">      
-    <div class="col-5">
-      <select class="custom-select border-info">
-        <option>選択してください</option>
-        <% @groups.each do |group|%>  
-          <option><%= group.name %></option>
-        <% end %>
-      </select>
-    </div>
-  </div>
-</div><br><br>
-<div class="container">
-  <h3 class=" text-info">しおり名</h3><br>
-  <div class="row">      
-    <div class="col-5">
-      <form>
-        <div class="form-group">
-          <input type="itinerary_name" class="form-control border-info">
-        </div>
-      </form>
-    </div>
-  </div>
-</div><br><br>
-<div class="container">
-  <div class="row">
-    <div class="col-7">
-      <div class="actions">
-        <%= submit_tag "しおりを追加する", class: "btn btn-success btn-lg float-right" %>
+<%= form_for @itinerary do |f| %>
+  <div class="container">
+    <h3 class=" text-info">グループ名</h3><br>
+    <div class="row">      
+      <div class="col-5">
+        <%= f.select :group_id, @groups.map { |group| [group.name, group.id] }, { include_blank: '選択してください'}, { class: "custom-select border-info" , required: true } %>
       </div>
     </div>
-  </div>
-</div><br><br>  
+  </div><br><br>
+  <div class="container">
+    <h3 class=" text-info">しおり名</h3><br>
+    <div class="row">      
+      <div class="col-5">      
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control border-info" %>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="actions">
+          <%= f.submit "しおりを追加する", class: "btn btn-success btn-lg float-right" %>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+<% end %>  

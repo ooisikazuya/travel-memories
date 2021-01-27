@@ -43,10 +43,11 @@
                   <td class="h5 text-info"><%= group.name %></td>                  
                   <td>しおりの数 ?</td>
                   <td>メンバー数 <%= group.users.length %></td>
+                  <td><%= link_to "グループメンバー一覧", group_users_path(group), class: 'btn btn-success text-white' %></td>
                 </tr>
               <% end %>            
             </tbody>
-          </table>
+          </table><br>
           <%= link_to "グループ作成・加入", new_group_path, class: 'btn btn-success text-white float-right' %>
         </div>
       </div>

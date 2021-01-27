@@ -1,25 +1,31 @@
 <div class="container">
   <h1 class="bg-warning text-white text-center">会員情報の変更</h1>
 </div><br> 
-<%= form_for(@user, url: user_path, html: { method: :patch }) do |f| %>
+<%= form_for(@user, url: user_path, method: :patch) do |f| %>
   <div class="container">
     <div class="row">      
       <div class="col-5">
         <div class="field">
-          <%= f.label :ニックネーム, class: "text-info" %><br />
+          <%= f.label :ニックネーム, class: "h2 text-info" %><br />
           <%= f.text_field :nickname, class:"form-control border-info", autofocus: true %>
         </div>
       </div>
-    </div>
+    </div><br><br>
     <div class="row">      
-      <div class="col-5">
+      <div class="col-12">
         <div class="field">
-          <%= f.label :プロフィール画像, class: "text-info" %><br />
-          <%= f.file_field :image %>
+          <%= f.label :プロフィール画像, class: "h2 text-info" %><br />           
+          <label>
+            <h5 class="btn btn-success">画像を選択</h5>           
+            <span style="display:none;">        
+              <%= f.file_field :image, id: :user_image %>
+            </span>
+          </lavel>       
         </div>
       </div>
     </div>
-  </div><br>
+    <%= image_tag @user.image.url, id: :image_prev, width: :'60%', height: :'60%' if @user.image? %>
+  </div><br><br>
   <div class="container">
     <div class="row">
       <div class="col-7">

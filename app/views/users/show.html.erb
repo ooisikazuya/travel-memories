@@ -9,15 +9,19 @@
   <h2 class="text-info">メールアドレス</h2>
   <h3><%= @user.email %><h3>
 </div><br>
-<% if @user.image? %>
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag @user.image.url %>
-  </p>
-<% end %>
+<div class="container">
+  <h2 class="text-info">プロフィール画像</h2>
+  <% if @user.image? %>
+    <p>
+      <%= image_tag @user.image.url %>
+    </p>
+  <% else %>
+    <h5 class="text-primary">選択されていません</h5>
+  <% end %>
+</div><br>
 <div class="container">
   <div class="row">
-    <div class="col-5">
+    <div class="col-7">
       <%= link_to '登録情報の変更', edit_user_path, class: "btn btn-success btn-lg float-right" %>
     </div>
   </div>

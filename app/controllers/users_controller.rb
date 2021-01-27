@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    @group = Group.find(params[:group_id])
+    @users = User.where(id: @group.group_users.pluck(:user_id))
   end
 
   def show
