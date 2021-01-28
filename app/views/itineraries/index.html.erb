@@ -1,20 +1,20 @@
 <div class="container">
-  <h1 class="bg-warning text-white text-center">しおりの編集・閲覧</h1>
+  <h1 class="bg-warning text-white text-center">しおり一覧</h1>
 </div><br>
 <div class="container">
-  <% @groups.each do |group|%> 
-    <h2 class="text-info"><%= group.name %></h2><br>
+  <% @itineraries.each do |itinerary| %>
+    <h2 class="text-info"><%= itinerary.group.name %></h2><br> 
     <ul>
-      <div class="row">      
-        <div class="col-7">
-          <li class="h3">しおり名</li><br>
-        </div>      
-        <div class="col-5">
-          <a class="btn btn-lg btn-success" href="#" role="button">編集・閲覧</a>      
+        <div class="row">      
+          <div class="col-7">
+            <li class="h3"><%= itinerary.name %></li><br>       
+          </div>      
+          <div class="col-5">
+            <%= link_to "編集・閲覧", itinerary_path(itinerary), class: "btn btn-lg btn-success" %>      
+          </div>  
         </div>
-      </div>
     </ul>
-  <% end %>
+  <% end %>  
 </div><br>
 <div class="container">
   <div class="row">      
