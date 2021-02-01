@@ -11,13 +11,22 @@
             <div class="form-group">
               
               <%= hidden_field_tag "itinerary_event_id_#{i}", event.id %>
+              <%= hidden_field_tag "itinerary_event_sort_order_#{i}", event.sort_order %>
               <%= text_area_tag "itinerary_event_#{i}", "#{event.event}", class: "form-control border-info", rows: 3, placeholder: "旅行の予定や感想など好きなように作成してください。" %>
             </div>
           </div>
           <div class="col-2 d-flex align-items-center">
             <a class="btn btn-success" href="#" role="button">削除</a>
           </div>
-          
+          <% if @events.count - 1 > i %>
+            <div class="container">
+              <div class="row"> 
+                <div class="col-6">
+                  <a class="btn btn-success float-right" id="sort_<%= i %>" onclick="sort(<%= i %>)" href="javascript:void(0)" role="button">↕️</a>
+                </div>
+              </div>     
+            </div><br><br>
+          <% end %>
         <% end %>
         
         <div class="col-10">
@@ -40,18 +49,7 @@
       <% end %> 
     </div>
   </div>
-  <div class="container">
-    <div class="row"> 
-      <div class="col-6">
-        <a class="btn btn-success float-right" href="#" role="button">↕️</a>
-      </div>
-    </div>     
-  </div><br>
-  <div class="container">
-    <div class="col-12">
-      <a class="btn btn-success float-right" href="#" role="button">内容の追加</a>
-    </div>
-  </div><br><br><br>
+
   <div class="container">
     <div class="row">      
       <div class="col-8">
