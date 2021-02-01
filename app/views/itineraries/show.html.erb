@@ -1,28 +1,30 @@
 <div class="container">
-  <h1 class="bg-warning text-white text-center">しおり名</h1>
+  <% if flash[:notice] %>
+    <h2 class="flash bg-primary text-white text-center">
+      <%= flash[:notice] %>
+    </h2>
+  <% end %>
 </div><br>
 <div class="container">
-  <div class="row">      
-    <div class="col-12">
-      <div class="card border-info">
-        <div class="card-body">
+  <h1 class="bg-warning text-white text-center"><%= @itinerary.name %></h1>
+</div><br>
+<% @events.each do |event| %>
+  <div class="container">
+    <div class="row">      
+      <div class="col-12">
+        <div class="card border-info">
+          <div class="card-body">
+            <%= event.event %>
+          </div>
         </div>
-      </div><br>
-      <div class="card border-info">
-        <div class="card-body">
-        </div>
-      </div><br>
-      <div class="card border-info">
-        <div class="card-body">
-        </div>
-      </div><br>
+      </div>
     </div>
-  </div>
-</div><br> 
+  </div><br> 
+<% end %>
 <div class="container">
   <div class="row">      
     <div class="col-12">
-      <%= link_to "編集する", edit_itinerary_path, class: "btn btn-lg btn-success float-right" %>      
+      <%= link_to "編集する", edit_itinerary_path(@itinerary), class: "btn btn-lg btn-success float-right" %>      
     </div>
   </div>
 </div><br><br>

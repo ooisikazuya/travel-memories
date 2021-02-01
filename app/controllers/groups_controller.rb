@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :set_user, only: [:index, :create]
+
   def index
-    @user = current_user
     @groups = Group.where(id: @user.group_users.pluck(:group_id))
   end
 
@@ -10,7 +11,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @group = @user.groups.new(group_params)
     @group.save!
     GroupUser.create(group: @group, user: @user)
@@ -33,7 +33,12 @@ class GroupsController < ApplicationController
   end
   
   private
+
   def group_params
     params.require(:group).permit(:name, :password, user_ids: [])
+  end
+
+  def set_user
+    @user = current_user
   end
 end

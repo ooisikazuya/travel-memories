@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit, :update]
   
   def index
     @group = Group.find(params[:group_id])
@@ -7,15 +8,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
   end
 
   def edit
-    @user = current_user
   end
 
   def update
-    @user = current_user
     @user.update(user_params)
 
     redirect_to user_path
@@ -25,5 +23,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :image)
+  end
+
+  def set_user
+    @user = current_user
   end
 end

@@ -1,45 +1,50 @@
 <div class="container">
-  <h1 class="bg-warning text-white text-center">しおり名</h1>
+  <h1 class="bg-warning text-white text-center"><%= @itinerary.name %></h1>
   <h2 class="text-info">編集する</h2>
 </div><br>
-<div class="container">
-  <div class="row">   
-    <div class="col-10"> 
-      <div class="form-group">
-        <textarea class="form-control border-info" rows="3" placeholder="旅行の予定や感想など好きなように作成してください。"></textarea>
-      </div>     
-    </div>
-    <div class="col-2 d-flex align-items-center">
-      <a class="btn btn-success" href="#" role="button">削除</a>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row"> 
-    <div class="col-6">
-      <a class="btn btn-success float-right" href="#" role="button">↕️</a>
-    </div>
-  </div><br>      
-  <div class="row">     
-    <div class="col-10">
-      <div class="form-group">
-        <textarea class="form-control border-info" rows="3" placeholder="旅行の予定や感想など好きなように作成してください。"></textarea>
-      </div>       
-    </div>
-    <div class="col-2 d-flex align-items-center">
-      <a class="btn btn-success" href="#" role="button">削除</a>
+<%= form_tag(itinerary_path(@itinerary), method: :patch) do %>
+  <div class="container">
+    <div class="row">
+      <% if @events.present? %>
+        <% @events.each do |event| %> 
+          <div class="col-10">
+            <div class="form-group">
+              <%= text_area_tag "itinerary_event", "#{event.event}", class: "form-control border-info", rows: 3, placeholder: "旅行の予定や感想など好きなように作成してください。" %>
+            </div>
+          </div>
+          <div class="col-2 d-flex align-items-center">
+            <a class="btn btn-success" href="#" role="button">削除</a>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="col-10">
+          <div class="form-group">
+            <%= text_area_tag "itinerary_event", "", class: "form-control border-info", rows: 3, placeholder: "旅行の予定や感想など好きなように作成してください。" %>
+          </div>
+        </div>
+        <div class="col-2 d-flex align-items-center">
+          <a class="btn btn-success" href="#" role="button">削除</a>
+        </div>
+      <% end %> 
     </div>
   </div>
-</div><br>
-<div class="container">
-  <div class="col-12">
-    <a class="btn btn-success float-right" href="#" role="button">内容の追加</a>
-  </div>
-</div><br><br><br><br><br>
-<div class="container">
-  <div class="row">      
-    <div class="col-8">
-      <a class="btn btn-lg btn-success float-right" href="#" role="button">内容を保存する</a>      
+  <div class="container">
+    <div class="row"> 
+      <div class="col-6">
+        <a class="btn btn-success float-right" href="#" role="button">↕️</a>
+      </div>
+    </div>     
+  </div><br>
+  <div class="container">
+    <div class="col-12">
+      <a class="btn btn-success float-right" href="#" role="button">内容の追加</a>
     </div>
-  </div>
-</div><br><br>
+  </div><br><br><br>
+  <div class="container">
+    <div class="row">      
+      <div class="col-8">
+        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-success float-right" %>      
+      </div>
+    </div>
+  </div><br><br>
+<% end %>

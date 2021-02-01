@@ -19,7 +19,7 @@
 <div class="container">
   <h1 class="bg-warning text-white text-center">グループ作成・加入</h1>
 </div><br>
-<%= form_for(@group, url: groups_path, method: :post) do |f| %>
+<%= form_for @group do |f| %>
   <div class="container">
     <h2 class="text-info">グループ作成</h2>
     <p class="text-primary">あなたがグループリーダーとなり、グループの作成に必要なID・グループ名を決めてください。</p>
@@ -54,7 +54,7 @@
     </div>
   </div><br><br>
 <% end %>
-<%= form_tag(join_groups_path, method: :post) do |f| %>
+<%= form_tag(join_groups_path, method: :post) do %>
   <div class="container">
     <h2 class="text-info">グループ加入</h2>
     <p class="text-primary">グループリーダーにグループIDを教えてもらい、こちらに入力してください。</p>
