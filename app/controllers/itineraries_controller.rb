@@ -18,7 +18,7 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
-    @events = ItineraryEvent.where(itinerary_id: @itinerary)
+    @events = ItineraryEvent.where(itinerary_id: @itinerary).order(:sort_order)
   end
 
   def create
