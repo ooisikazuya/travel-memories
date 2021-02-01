@@ -18,7 +18,7 @@ class ItinerariesController < ApplicationController
 
   def edit
     @itinerary = Itinerary.find(params[:id])
-    @events = ItineraryEvent.where(itinerary_id: @itinerary)
+    @events = ItineraryEvent.where(itinerary_id: @itinerary).order(:sort_order)
   end
 
   def create
@@ -28,17 +28,17 @@ class ItinerariesController < ApplicationController
 
   def update
     @itinerary = Itinerary.find(params[:id])
-    @events = ItineraryEvent.where(itinerary_id: @itinerary)
-    if @events.present?
-      @events.update(event: params['itinerary_event'])
-      flash[:notice] = "しおりを更新しました！"
-      redirect_to itinerary_path
-    else
-      @events = ItineraryEvent.create(itinerary_id: @itinerary.id, event: params['itinerary_event'])
-      @events.save!
-      flash[:notice] = "しおりを更新しました！"
-      redirect_to itinerary_path
+    (0..100).each do |i|
+      break if params["itinerary_event_id_#{i}"].nil?
+      
+      @event = @itinerary.itinerary_events.find(params["itinerary_event_id_#{i}"].to_i)
+      @event.event = params["itinerary_event_#{i}"]
+      @event.save
     end
+    
+    @itinerary.itinerary_events.create(event: params['itinerary_event']) if params['itinerary_event'].present?
+    
+    redirect_to itinerary_path
   end
 
   def destroy
