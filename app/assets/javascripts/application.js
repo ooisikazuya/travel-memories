@@ -35,3 +35,11 @@ $(document).on('turbolinks:load', function() {
     readURL(this);
   });
 });
+
+
+function sort(index) {
+  var textBefore = $('#itinerary_event_' + index).html()
+  var textAfter = $('#itinerary_event_' + (index + 1)).html()
+  $('#itinerary_event_' + index).html(textAfter)
+  $('#itinerary_event_' + (index + 1)).html(textBefore)
+}
