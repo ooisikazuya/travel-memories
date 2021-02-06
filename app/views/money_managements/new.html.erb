@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="bg-warning text-white text-center">新しい帳簿の追加</h1>
+</div><br>
+<%= form_for @money_management do |f| %>
+  <div class="container">
+    <h3 class=" text-info">帳簿名</h3><br>
+    <div class="row">         
+      <div class="col-5">      
+        <div class="form-group">
+          <%= f.text_field :name, class: "form-control border-info", required: true %>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+  <div class="container">
+    <h3 class=" text-info">予算</h3><br>
+    <div class="row">         
+      <div class="col-5">      
+        <div class="form-group">
+          <%= f.label :数字, class: "text-info" %>
+          <%= f.number_field :budget, class: "form-control border-info", required: true %>
+        </div>
+      </div>
+      <div class="col-3">
+        <%= f.label :通貨, class: "text-info" %>      
+        <%= f.text_field :currency, class: "form-control border-info", required: true %>
+      </div>
+    </div>
+  </div><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="actions">
+          <%= f.submit "帳簿を追加する", class: "btn btn-success btn-lg float-right" %>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+<% end %>  

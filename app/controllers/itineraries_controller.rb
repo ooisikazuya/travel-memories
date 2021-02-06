@@ -34,9 +34,9 @@ class ItinerariesController < ApplicationController
       @event.event = params["itinerary_event_#{i}"]
       @event.save
     end
-      @itinerary.itinerary_events.create(event: params['itinerary_event']) if params['itinerary_event'].present?
-      flash[:notice] = "しおりを更新しました！"
-      redirect_to itinerary_path
+    @itinerary.itinerary_events.create(event: params['itinerary_event']) if params['itinerary_event'].present?
+    flash[:notice] = "しおりを更新しました！"
+    redirect_to itinerary_path
   end
 
   def destroy
