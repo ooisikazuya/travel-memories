@@ -1,16 +1,36 @@
 <div class="container">
+  <% if flash[:notice] %>
+    <h2 class="flash bg-primary text-white text-center">
+      <%= flash[:notice] %>
+    </h2>
+  <% end %>
+</div><br>
+<div class="container">
   <h1 class="bg-warning text-white text-center"><%= @money_management.name %></h1>
 </div><br>
 <div class="container">
-  <div class="row">      
-    <div class="col-12">
-      <div class="card border-info">
-        <div class="card-body">
+  <h3 class="text-primary">残金　<%= @money_management.budget %><%= @money_management.currency %></h3>
+</div><br> 
+<% @records.each do |record| %>
+  <div class="container">
+    <div class="row">      
+      <div class="col-12">
+        <div class="card border-info">
+          <div class="card-body">
+            <div class="row">      
+              <div class="col-7">
+                <h3><%= record.content %></h3>
+              </div>
+              <div class="col-5">
+                <h3><%= record.cost %><%= @money_management.currency %></h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div><br> 
+  </div><br>
+<% end %> 
 <div class="container">
   <div class="row">      
     <div class="col-12">

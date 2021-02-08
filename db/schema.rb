@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_024858) do
+ActiveRecord::Schema.define(version: 2021_02_07_030604) do
 
   create_table "group_users", force: :cascade do |t|
     t.integer "group_id", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2021_02_06_024858) do
     t.integer "user_id", null: false
     t.integer "budget", null: false
     t.string "currency", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "money_management_id", null: false
+    t.integer "category", null: false
+    t.text "content", default: "", null: false
+    t.integer "cost", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

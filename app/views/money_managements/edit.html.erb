@@ -9,8 +9,8 @@
       </div>
       <div class="col-6">
         <div class="form-group float-right">
-          <lavel class="h3 text-primary">予算</lavel>
-          <input class="form-control form-control-lg border-primary">
+          <lavel class="h3 text-primary">残金</lavel>
+          <%= number_field_tag "budget", "#{@money_management.budget}", min: 0, class: "form-control form-control-lg border-primary" %>
         </div>
       </div>
       <div class="row">  
@@ -21,44 +21,108 @@
     </div>
   </div><br>
   <div class="container">
-    <div class="card border-info">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-4">
-            <lavel class="text-info">カテゴリー</lavel>
-            <select class="form-control border-info">
-              <option>選択してください</option>
-              <option>交通費</option>
-              <option>食費</option>
-              <option>ホテル・宿</option>
-              <option>お土産</option>
-              <option>観光名所・施設</option>
-              <option>その他</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">      
-          <div class="col-6">
-            <div class="form-group">
-              <lavel class="text-info">名称（路線名・飲食店名・ホテル名など）</lavel>
-              <input class="form-control border-info">
+    <% if @records.present? %>
+      <% @records.each_with_index do |record, i| %>
+        <div class="card border-info">
+          <div class="card-body">
+            <%= hidden_field_tag "record_id_#{i}", record.id %>
+            <div class="row">
+              <div class="col-4">
+                <lavel class="text-info">カテゴリー</lavel>
+                <%= select_tag "category_#{i}", options_for_select([['交通費', 1], ['食費', 2], ['ホテル・宿', 3], ['お土産', 4], ['観光名所・施設', 5], ['その他', 6]], selected: "#{record.category}"), class: "form-control border-info" %>
+              </div>
+              <div class="col-8">
+                <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
+              </div>
+            </div>
+            <div class="row">      
+              <div class="col-7">
+                <div class="form-group">
+                  <lavel class="text-info">名称（路線名・飲食店名・ホテル名など）</lavel>
+                  <%= text_field_tag "content_#{i}", "#{record.content}", class: "form-control border-info" %>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group float-right">
+                  <lavel class="text-info">金額</lavel>
+                  <%= number_field_tag "cost_#{i}", "#{record.cost}", min: 0, class: "form-control border-info" %>
+                </div>
+              </div>
+              <div class="row"> 
+                <div class="col d-flex align-items-end">
+                  <h5 class="text-info"><%= @money_management.currency %></h5>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-2">
-            <div class="form-group float-right">
-              <lavel class="text-info">金額</lavel>
-              <input class="form-control border-info">
+        </div><br>
+      <% end %>
+      <div class="card border-info">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <lavel class="text-info">カテゴリー</lavel>
+              <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
+            </div>
+            <div class="col-8">
+              <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
             </div>
           </div>
-          <div class="col-2 d-flex align-items-end">
-            <h5 class="text-info"><%= @money_management.currency %></h5>
-          </div>
-          <div class="col-2 d-flex align-items-center">
-            <a class="btn btn-success" href="#" role="button">削除</a>
+          <div class="row">      
+            <div class="col-7">
+              <div class="form-group">
+                <lavel class="text-info">名称（路線名・飲食店名・ホテル名など）</lavel>
+                <%= text_field_tag "content", "", class: "form-control border-info" %>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group float-right">
+                <lavel class="text-info">金額</lavel>
+                <%= number_field_tag "cost", Integer, min: 0, class: "form-control border-info" %>
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col d-flex align-items-end">
+                <h5 class="text-info"><%= @money_management.currency %></h5>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><br>
+    <% else %> 
+      <div class="card border-info">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <lavel class="text-info">カテゴリー</lavel>
+              <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
+            </div>
+            <div class="col-8">
+              <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
+            </div>
+          </div>
+          <div class="row">      
+            <div class="col-7">
+              <div class="form-group">
+                <lavel class="text-info">名称（路線名・飲食店名・ホテル名など）</lavel>
+                <%= text_field_tag "content", "", class: "form-control border-info" %>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group float-right">
+                <lavel class="text-info">金額</lavel>
+                <%= number_field_tag "cost", Integer, min: 0, class: "form-control border-info" %>
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col d-flex align-items-end">
+                <h5 class="text-info"><%= @money_management.currency %></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+    <% end %>
   </div><br>
   <div class="container">
     <div class="row">
@@ -71,7 +135,7 @@
   <div class="container">
     <div class="row">      
       <div class="col-8">
-        <a class="btn btn-lg btn-success float-right" href="#" role="button">内容を保存する</a>      
+        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-success float-right" %>      
       </div>
     </div>
   </div><br><br>
