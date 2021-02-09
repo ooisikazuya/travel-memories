@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
   
   resource :user, only: [:show, :edit, :update]
-  resources :itineraries
+  resources :itineraries do
+    resources :itinerary_events, only: :destroy
+  end
   resources :money_managements
   resources :groups, only: [:index, :new, :create] do
     resources :users, only: [:index]
