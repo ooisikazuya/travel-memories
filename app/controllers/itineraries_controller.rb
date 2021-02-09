@@ -28,7 +28,7 @@ class ItinerariesController < ApplicationController
 
   def update
     @itinerary = Itinerary.find(params[:id])
-    (0..100).each do |i|
+    (0..200).each do |i|
       break if params["itinerary_event_id_#{i}"].nil?
       @event = @itinerary.itinerary_events.find(params["itinerary_event_id_#{i}"].to_i)
       @event.event = params["itinerary_event_#{i}"]

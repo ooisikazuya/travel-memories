@@ -27,7 +27,7 @@ class MoneyManagementsController < ApplicationController
   def update
     @money_management = MoneyManagement.find(params[:id])
     @money_management.update(update_money_management_params)
-    (0..100).each do |i|
+    (0..200).each do |i|
       break if params["record_id_#{i}"].nil?
       @record = @money_management.records.find(params["record_id_#{i}"].to_i)
       @record.category = params["category_#{i}"]
