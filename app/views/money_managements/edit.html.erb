@@ -64,9 +64,6 @@
               <lavel class="text-info">カテゴリー</lavel>
               <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
             </div>
-            <div class="col-8">
-              <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
-            </div>
           </div>
           <div class="row">      
             <div class="col-7">
@@ -96,9 +93,6 @@
             <div class="col-4">
               <lavel class="text-info">カテゴリー</lavel>
               <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
-            </div>
-            <div class="col-8">
-              <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
             </div>
           </div>
           <div class="row">      
