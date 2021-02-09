@@ -4,5 +4,4 @@ class MoneyManagement < ApplicationRecord
   validates :name, presence: true
   validates :budget, presence: true
   validates :currency, presence: true
-  accepts_nested_attributes_for :records, allow_destroy: :destroy, reject_if: :all_blank
 end
