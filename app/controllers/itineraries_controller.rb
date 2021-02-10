@@ -39,9 +39,6 @@ class ItinerariesController < ApplicationController
     redirect_to itinerary_path
   end
 
-  def destroy
-  end
-
   private
 
   def itinerary_params

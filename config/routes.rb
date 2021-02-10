@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   resources :itineraries do
     resources :itinerary_events, only: :destroy
   end
-  resources :money_managements
+  resources :money_managements do
+    resources :records, only: :destroy
+  end
   resources :groups, only: [:index, :new, :create] do
     resources :users, only: [:index]
     post 'join', on: :collection

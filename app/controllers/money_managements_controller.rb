@@ -40,9 +40,6 @@ class MoneyManagementsController < ApplicationController
     redirect_to money_management_path
   end
 
-  def destroy
-  end
-
   private
 
   def create_money_management_params

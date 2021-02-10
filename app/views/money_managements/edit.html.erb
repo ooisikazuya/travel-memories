@@ -7,9 +7,11 @@
       <div class="col-4">
         <h2 class="text-info"><%= @money_management.name %></h2>
       </div>
-      <div class="col-6">
-        <div class="form-group float-right">
-          <lavel class="h3 text-primary">残金</lavel>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <lavel class="h4 text-primary">予算</lavel>
           <%= number_field_tag "budget", "#{@money_management.budget}", min: 0, class: "form-control form-control-lg border-primary" %>
         </div>
       </div>
@@ -17,7 +19,10 @@
         <div class="col d-flex align-items-end">
           <h4 class="text-primary"><%= @money_management.currency %></h4>
         </div>
-      </div> 
+      </div>
+      <div class="col-7">
+        <h3 class="text-primary float-right">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+      </div>  
     </div>
   </div><br>
   <div class="container">
@@ -32,7 +37,7 @@
                 <%= select_tag "category_#{i}", options_for_select([['交通費', 1], ['食費', 2], ['ホテル・宿', 3], ['お土産', 4], ['観光名所・施設', 5], ['その他', 6]], selected: "#{record.category}"), class: "form-control border-info" %>
               </div>
               <div class="col-8">
-                <%= link_to "削除", money_management_path(@money_management), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
+                <%= link_to "削除", money_management_record_path(@money_management, record), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
               </div>
             </div>
             <div class="row">      
