@@ -9,7 +9,11 @@
           <li class="h3"><%= money_management.name %></li><br>       
         </div>
         <div class="col-5">
-          <h3 class="text-primary">残金　<%= money_management.budget %><%= money_management.currency %></h3>
+          <% if money_management.budget - money_management.records.sum(:cost) >= 0 %>
+            <h3 class="text-primary float-right">残金 <%= money_management.budget - money_management.records.sum(:cost) %><%= money_management.currency %></h3>
+          <% else %>
+            <h3 class="text-danger float-right"><%= (money_management.budget - money_management.records.sum(:cost)).abs %><%= money_management.currency %>不足</h3>
+          <% end %> 
         </div>      
         <div class="col-3">
           <%= link_to "帳簿を見る", money_management_path(money_management), class: "btn btn-lg btn-success" %>

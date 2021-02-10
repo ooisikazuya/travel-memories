@@ -20,8 +20,12 @@
           <h4 class="text-primary"><%= @money_management.currency %></h4>
         </div>
       </div>
-      <div class="col-7">
-        <h3 class="text-primary float-right">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+      <div class="col-6">
+        <% if @money_management.budget - @records.sum(:cost) >= 0 %>
+          <h3 class="text-primary float-right">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+        <% else %>
+          <h3 class="text-danger float-right"><%= (@money_management.budget - @records.sum(:cost)).abs %><%= @money_management.currency %>足りません！</h3>
+        <% end %> 
       </div>  
     </div>
   </div><br>
@@ -34,7 +38,7 @@
             <div class="row">
               <div class="col-4">
                 <lavel class="text-info">カテゴリー</lavel>
-                <%= select_tag "category_#{i}", options_for_select([['交通費', 1], ['食費', 2], ['ホテル・宿', 3], ['お土産', 4], ['観光名所・施設', 5], ['その他', 6]], selected: "#{record.category}"), class: "form-control border-info" %>
+                <%= select_tag "category_#{i}", options_for_select([['交通費', '交通費'], ['食費', '食費'], ['ホテル・宿', 'ホテル・宿'], ['お土産', 'お土産'], ['観光名所・施設', '観光名所・施設'], ['その他', 'その他']], selected: "#{record.category}"), class: "form-control border-info" %>
               </div>
               <div class="col-8">
                 <%= link_to "削除", money_management_record_path(@money_management, record), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
@@ -67,7 +71,7 @@
           <div class="row">
             <div class="col-4">
               <lavel class="text-info">カテゴリー</lavel>
-              <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
+              <%= select_tag "category", options_for_select([['交通費', '交通費'], ['食費', '食費'], ['ホテル・宿', 'ホテル・宿'], ['お土産', 'お土産'], ['観光名所・施設', '観光名所・施設'], ['その他', 'その他']]), include_blank: "選択してください", class: "form-control border-info" %>
             </div>
           </div>
           <div class="row">      
@@ -97,7 +101,7 @@
           <div class="row">
             <div class="col-4">
               <lavel class="text-info">カテゴリー</lavel>
-              <%= select_tag "category", options_for_select([['交通費', '1'], ['食費', '2'], ['ホテル・宿', '3'], ['お土産', '4'], ['観光名所・施設', '5'], ['その他', '6']]), include_blank: "選択してください", class: "form-control border-info" %>
+              <%= select_tag "category", options_for_select([['交通費', '交通費'], ['食費', '食費'], ['ホテル・宿', 'ホテル・宿'], ['お土産', 'お土産'], ['観光名所・施設', '観光名所・施設'], ['その他', 'その他']]), include_blank: "選択してください", class: "form-control border-info" %>
             </div>
           </div>
           <div class="row">      

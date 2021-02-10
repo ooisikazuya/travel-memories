@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_07_030604) do
 
   create_table "records", force: :cascade do |t|
     t.integer "money_management_id", null: false
-    t.integer "category", null: false
+    t.string "category", default: "", null: false
     t.text "content", default: "", null: false
     t.integer "cost", null: false
     t.datetime "created_at", null: false

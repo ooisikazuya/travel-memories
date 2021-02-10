@@ -9,19 +9,29 @@
   <h1 class="bg-warning text-white text-center"><%= @money_management.name %></h1>
 </div><br>
 <div class="container">
-  <h3 class="text-primary">残金　<%= @money_management.budget %><%= @money_management.currency %></h3>
-</div><br> 
+  <% if @money_management.budget - @records.sum(:cost) >= 0 %>
+    <h3 class="text-primary">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+  <% else %>
+    <h3 class="text-danger"><%= (@money_management.budget - @records.sum(:cost)).abs %><%= @money_management.currency %>足りません！</h3>
+  <% end %> 
+</div><br>
+<div class="container">
+  <%= pie_chart @records.group(:category).sum(:cost), suffix: @money_management.currency %>
+</div><br>
 <% @records.each do |record| %>
   <div class="container">
     <div class="row">      
       <div class="col-12">
         <div class="card border-info">
           <div class="card-body">
-            <div class="row">      
-              <div class="col-7">
+            <div class="row">
+              <div class="col-3">
+                <h3><%= record.category %></h3>
+              </div>
+              <div class="col-6">
                 <h3><%= record.content %></h3>
               </div>
-              <div class="col-5">
+              <div class="col-3">
                 <h3><%= record.cost %><%= @money_management.currency %></h3>
               </div>
             </div>
