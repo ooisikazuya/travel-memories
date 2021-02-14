@@ -38,18 +38,22 @@
       <div class="card">
         <h5 class="card-header bg-warning text-white">所属グループ</h5>
         <div class="card-body">
-          <table class="table">
-            <tbody>
-              <% @groups.each do |group|%>
-                <tr>
-                  <td class="h5 text-info"><%= group.name %></td>                  
-                  <td>しおりの数 <%= group.itineraries.length %></td>
-                  <td>メンバー数 <%= group.users.length %></td>
-                  <td><%= link_to "グループメンバー一覧", group_users_path(group), class: 'btn btn-success text-white' %></td>
-                </tr>
-              <% end %>            
-            </tbody>
-          </table><br>
+          <% if @groups.present? %>
+            <table class="table">
+              <tbody>
+                <% @groups.each do |group|%>
+                  <tr>
+                    <td class="h5 text-info"><%= group.name %></td>                  
+                    <td>しおりの数 <%= group.itineraries.length %></td>
+                    <td>メンバー数 <%= group.users.length %></td>
+                    <td><%= link_to "グループメンバー一覧", group_users_path(group), class: 'btn btn-success text-white' %></td>
+                  </tr>
+                <% end %>            
+              </tbody>
+            </table><br>
+          <% else %>
+            <h2 class="text-danger text-center">グループに入っていません</h2>
+          <% end %> 
           <i class="fas fa-user-friends fa-3x"></i>
           <%= link_to "グループ作成・加入", new_group_path, class: 'btn btn-warning float-right' %>
         </div>
