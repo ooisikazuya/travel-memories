@@ -15,13 +15,13 @@
             </div>
           </div>
           <div class="col-2 d-flex align-items-center">
-            <%= link_to "削除", itinerary_itinerary_event_path(@itinerary, event), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success" %>
+            <%= link_to "", itinerary_itinerary_event_path(@itinerary, event), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger far fa-trash-alt fa-lg" %>
           </div>
           <% if @events.count - 1 > i %>
             <div class="container">
               <div class="row">
                 <div class="col-6">
-                  <a class="btn btn-success float-right" id="sort_<%= i %>" onclick="sort(<%= i %>)" href="javascript:void(0)" role="button">↕️</a>
+                  <a class="btn btn-success float-right fas fa-sort fa-lg" id="sort_<%= i %>" onclick="sort(<%= i %>)" href="javascript:void(0)" role="button"></a>
                 </div>
               </div>
             </div><br><br>
@@ -46,8 +46,8 @@
   </div><br>
   <div class="container">
     <div class="row">      
-      <div class="col-8">
-        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-success float-right" %>      
+      <div class="col-7">
+        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-primary float-right" %>      
       </div>
     </div>
   </div><br><br>

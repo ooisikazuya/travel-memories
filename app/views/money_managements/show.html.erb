@@ -10,13 +10,24 @@
 </div><br>
 <div class="container">
   <% if @money_management.budget - @records.sum(:cost) >= 0 %>
-    <h3 class="text-primary">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+    <h2 class="text-primary">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h2>
   <% else %>
     <h3 class="text-danger"><%= (@money_management.budget - @records.sum(:cost)).abs %><%= @money_management.currency %>足りません！</h3>
   <% end %> 
 </div><br>
 <div class="container">
-  <%= pie_chart @records.group(:category).sum(:cost), suffix: @money_management.currency %>
+  <% if @records.present? %>
+    <%= pie_chart @records.group(:category).sum(:cost), suffix: @money_management.currency %>
+  <% else %>
+    <h2 class="text-danger text-center">記録がありません</h2>
+  <% end %>
+</div><br>
+<div class="container">
+  <div class="row">      
+    <div class="col-12">
+      <%= link_to "記録する", edit_money_management_path(@money_management), class: "btn btn-lg btn-info float-right" %>      
+    </div>
+  </div>
 </div><br>
 <% @records.each do |record| %>
   <div class="container">
@@ -40,11 +51,5 @@
       </div>
     </div>
   </div><br>
-<% end %> 
-<div class="container">
-  <div class="row">      
-    <div class="col-12">
-      <%= link_to "記録する", edit_money_management_path(@money_management), class: "btn btn-lg btn-success float-right" %>      
-    </div>
-  </div>
-</div><br><br>
+<% end %>
+<br> 

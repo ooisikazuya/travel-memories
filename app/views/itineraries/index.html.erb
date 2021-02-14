@@ -2,26 +2,30 @@
   <h1 class="bg-warning text-white text-center">しおり一覧</h1>
 </div><br>
 <div class="container">
-  <% @groups.each do |group| %>
-    <h2 class="text-info"><%= group.name %></h2><br>
-    <% group.itineraries.each do |itinerary| %> 
-      <ul>
-        <div class="row">      
-          <div class="col-7">
-            <li class="h3"><%= itinerary.name %></li><br>       
-          </div>      
-          <div class="col-5">
-            <%= link_to "編集・閲覧", itinerary_path(itinerary), class: "btn btn-lg btn-success" %>      
-          </div>  
-        </div>
-      </ul>
+  <% unless @itineraries.present? %>
+      <h2 class="text-danger text-center">しおりがありません</h2>
+  <% else %>
+    <% @groups.each do |group| %>
+      <h2 class="text-info"><%= group.name %></h2><br>
+      <% group.itineraries.each do |itinerary| %> 
+        <ul>
+          <div class="row">      
+            <div class="col-7">
+              <li class="h3"><%= itinerary.name %></li><br>       
+            </div>      
+            <div class="col-5">
+              <%= link_to "作成・閲覧", itinerary_path(itinerary), class: "btn btn-lg btn-success" %>      
+            </div>  
+          </div>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>  
+  <% end %>
 </div><br>
 <div class="container">
   <div class="row">      
     <div class="col-12"> 
-      <%= link_to "新しいしおりの追加", new_itinerary_path, class: "btn btn-lg btn-success" %>
+      <%= link_to "新しいしおりの追加", new_itinerary_path, class: "btn btn-lg btn-warning" %>
     </div>
   </div>
 </div><br><br>

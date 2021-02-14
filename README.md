@@ -1,24 +1,90 @@
-# README
+## アプリ名
+### TRAVEL-MEMORIES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
-Things you may want to cover:
+旅行のしおりを作成できるだけでなく、旅行に必要な経費を管理できる機能もあります。
 
-* Ruby version
+旅行の計画を立てる際や旅行中、旅行から帰ってきた後にも楽しく使えるアプリになっています。
 
-* System dependencies
+## アプリを作るきっかけ
+普段旅行の計画を立てる際、ホテル代や交通費などをある程度計算して必要なお金を準備しているのですが、実際に旅行先に行った時のお土産代や食費はあまり意識せずにお金を使っていて、何にいくら使ったのかをあまり把握していませんでした。
 
-* Configuration
+また、旅行の計画はいつもメモアプリに書いていて旅行から帰るとメモを消していましたが、せっかくなので旅行の思い出も一緒に書いて保存できるものがあればいいなと思っていました。
 
-* Database creation
+そこで、お金の管理ができる機能と旅行のしおりが作れる機能をセットにしたアプリを作ってみました。
 
-* Database initialization
+家族・友人とよく旅行する人にぴったりなアプリだと思います。
 
-* How to run the test suite
+## ターゲット
+- 旅行の計画を立てることが好きな人
+- 旅行の思い出を後で見返して楽しみたい人　
+- 旅行に使うお金の管理をきちんとしたい人
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使い方
+- **しおりの作成・閲覧**
 
-* Deployment instructions
+![スクリーンショット 2021-02-14 15 25 57](https://user-images.githubusercontent.com/74053238/107870789-d5946780-6ede-11eb-94cf-27d76ce3f9db.png)
 
-* ...
+旅行のしおりを作成・閲覧することができます。
+
+しおりは決まった書き方がないので、家族・友人だけのオリジナルのしおりを作って楽しんでください。
+
+- **お金の管理**
+
+![スクリーンショット 2021-02-14 15 33 29](https://user-images.githubusercontent.com/74053238/107870817-22783e00-6edf-11eb-929b-51f97cf39e4d.png)
+
+![スクリーンショット 2021-02-14 15 43 05](https://user-images.githubusercontent.com/74053238/107870824-45a2ed80-6edf-11eb-8705-46a7d425673d.png)
+
+
+旅行にかかる必要経費、お土産などの旅行中に使ったお金を記録することができます。
+
+使ったお金を設定した予算から引いて残額を表示してくれるのでわざわざ計算する必要がありません。
+
+さらに、カテゴリー別に使ったお金の合計を円グラフにして表示してくれます。
+
+- **グループ作成・加入**
+
+![スクリーンショット 2021-02-14 15 46 45](https://user-images.githubusercontent.com/74053238/107870831-60756200-6edf-11eb-858d-88ed39d4f988.png)
+
+![スクリーンショット 2021-02-14 15 48 26](https://user-images.githubusercontent.com/74053238/107870845-77b44f80-6edf-11eb-837a-99083ba38220.png)
+
+
+グループリーダーとしてグループを作成したり、グループIDを教えてもらってグループに加入することができます。
+
+家族・友人とグループを組んで旅行のしおりを共有できるようにしておきましょう。
+
+- **会員情報**
+
+![スクリーンショット 2021-02-14 15 49 27](https://user-images.githubusercontent.com/74053238/107870854-8ef33d00-6edf-11eb-9069-b71a120615c9.png)
+
+
+会員情報の変更、プロフィール画像の選択をすることができます。
+
+プロフィール画像はグループメンバー一覧に表示されます。
+
+## 使用技術
+### フロントエンド
+- HTML/CSS
+- JavaScript/jQuery
+- devise
+- chartkick
+- carrierwave
+- mini_magick
+
+### サーバーサイド
+- Ruby 2.6.2
+- Ruby on Rails 5.2.4.4
+
+### デプロイ
+- heroku 7.47.12
+
+  #### URL
+  
+
+
+  #### テストユーザー情報
+  - ニックネーム  kazu　
+  - メールアドレス  ttttt@ttttt
+  - パスワード  yyyyyy  

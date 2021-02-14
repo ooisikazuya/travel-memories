@@ -1,30 +1,36 @@
 <br>
 <div class="container">
-  <h1 class="text-center text-warning">旅行の思い出を</h1><br>
-  <h1 class="text-center text-warning">あなたと共に</h1><br> 
+  <div class="row"> 
+    <div class="col-3">
+      <i class="fas fa-plane fa-7x faa-float animated"></i>
+    </div>
+    <div class="col-6">  
+      <h1 class="text-center text-warning">旅行の思い出を</h1><br>
+      <h1 class="text-center text-warning">あなたと共に</h1><br>
+    </div>
+    <div class="col-3">
+      <i class="fas fa-suitcase-rolling fa-7x float-right"></i>
+    </div>
+  </div>
 </div><br><br>
 <div class="container">
   <p class="text-center text-info">旅行の計画や思い出を家族・仲間と共有できるサービスです。</p><br>
   <p class="text-center text-info">旅行のしおりの作成や旅行の際に使うお金の管理が簡単にできるので、計画を立てる時や旅行中に大変役立ちます。</p><br>
   <p class="text-center text-info">楽しい旅行のお供にいかがでしょうか。</p>
 </div><br><br>
-<% if user_signed_in? %>
-  <div class="container">
-    <div class="row"> 
-      <div class="col-7">
-        <%= link_to "はじめる", groups_path, class: 'btn btn-success btn-lg float-right' %>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <i class="fas fa-train fa-7x faa-bounce animated"></i>
     </div>
-  </div><br><br>
-<% else %>
-  <div class="container">
-    <div class="row"> 
-      <div class="col-6">
-        <%= link_to "会員登録", new_user_registration_path, class: 'btn btn-success btn-lg float-right' %>
-      </div>
-      <div class="col-6">
-        <%= link_to "ログイン", new_user_session_path, class: 'btn btn-success btn-lg' %>
-      </div>
+    <div class="col-3">
+      <%= link_to "会員登録", new_user_registration_path, class: 'btn btn-success btn-lg float-right' %>
     </div>
-  </div><br><br>
-<% end %>
+    <div class="col-3">
+      <%= link_to "ログイン", new_user_session_path, class: 'btn btn-success btn-lg' %>
+    </div>
+    <div class="col-3">
+      <i class="fas fa-car fa-7x float-right faa-vertical animated"></i>
+    </div>
+  </div>
+</div><br><br>  

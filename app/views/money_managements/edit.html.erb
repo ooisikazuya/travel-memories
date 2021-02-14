@@ -1,11 +1,11 @@
 <div class="container">
-  <h1 class="bg-warning text-white text-center">記録する</h1>
+  <h1 class="bg-warning text-white text-center"><%= @money_management.name %></h1>
 </div><br>
 <%= form_tag(money_management_path(@money_management), method: :patch) do %>
   <div class="container">
     <div class="row">      
       <div class="col-4">
-        <h2 class="text-info"><%= @money_management.name %></h2>
+        <h2 class="text-info">記録する</h2>
       </div>
     </div>
     <div class="row">
@@ -22,7 +22,7 @@
       </div>
       <div class="col-6">
         <% if @money_management.budget - @records.sum(:cost) >= 0 %>
-          <h3 class="text-primary float-right">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h3>
+          <h2 class="text-primary float-right">残金 <%= @money_management.budget - @records.sum(:cost) %><%= @money_management.currency %></h2>
         <% else %>
           <h3 class="text-danger float-right"><%= (@money_management.budget - @records.sum(:cost)).abs %><%= @money_management.currency %>足りません！</h3>
         <% end %> 
@@ -41,7 +41,7 @@
                 <%= select_tag "category_#{i}", options_for_select([['交通費', '交通費'], ['食費', '食費'], ['ホテル・宿', 'ホテル・宿'], ['お土産', 'お土産'], ['観光名所・施設', '観光名所・施設'], ['その他', 'その他']], selected: "#{record.category}"), class: "form-control border-info" %>
               </div>
               <div class="col-8">
-                <%= link_to "削除", money_management_record_path(@money_management, record), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-success float-right" %>
+                <%= link_to "", money_management_record_path(@money_management, record), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger float-right far fa-trash-alt fa-lg" %>
               </div>
             </div>
             <div class="row">      
@@ -130,7 +130,7 @@
   <div class="container">
     <div class="row">      
       <div class="col-8">
-        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-success float-right" %>      
+        <%= submit_tag "内容を保存する", class: "btn btn-lg btn-primary float-right" %>      
       </div>
     </div>
   </div><br><br>

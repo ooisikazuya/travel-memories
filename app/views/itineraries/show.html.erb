@@ -8,23 +8,29 @@
 <div class="container">
   <h1 class="bg-warning text-white text-center"><%= @itinerary.name %></h1>
 </div><br>
+<% unless @events.present? %>
+  <div class="container">
+    <h2 class="text-danger text-center">内容がありません</h2>
+  </div><br>
+<% end %>
+<div class="container">
+  <div class="row">      
+    <div class="col-12">
+      <%= link_to "編集する", edit_itinerary_path(@itinerary), class: "btn btn-lg btn-info float-right" %>      
+    </div>
+  </div>
+</div><br>
 <% @events.each do |event| %>
   <div class="container">
     <div class="row">      
       <div class="col-12">
         <div class="card border-info">
           <div class="card-body">
-            <%= event.event %>
+            <%= simple_format(event.event, sanitize: true) %>
           </div>
         </div>
       </div>
     </div>
   </div><br> 
 <% end %>
-<div class="container">
-  <div class="row">      
-    <div class="col-12">
-      <%= link_to "編集する", edit_itinerary_path(@itinerary), class: "btn btn-lg btn-success float-right" %>      
-    </div>
-  </div>
-</div><br><br>
+<br>
