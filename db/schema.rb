@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_02_07_030604) do
 
-  create_table "group_users", force: :cascade do |t|
+  create_table "group_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "group_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_07_030604) do
     t.index ["group_id", "user_id"], name: "index_group_users_on_group_id_and_user_id", unique: true
   end
 
-  create_table "groups", force: :cascade do |t|
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "password", default: "", null: false
     t.datetime "created_at", null: false
@@ -29,22 +29,22 @@ ActiveRecord::Schema.define(version: 2021_02_07_030604) do
     t.index ["password"], name: "index_groups_on_password", unique: true
   end
 
-  create_table "itineraries", force: :cascade do |t|
+  create_table "itineraries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "itinerary_events", force: :cascade do |t|
+  create_table "itinerary_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "itinerary_id", null: false
-    t.text "event", default: "", null: false
+    t.text "event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "sort_order", default: 1, null: false
   end
 
-  create_table "money_managements", force: :cascade do |t|
+  create_table "money_managements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "user_id", null: false
     t.integer "budget", null: false
@@ -53,16 +53,16 @@ ActiveRecord::Schema.define(version: 2021_02_07_030604) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "records", force: :cascade do |t|
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "money_management_id", null: false
     t.string "category", default: "", null: false
-    t.text "content", default: "", null: false
+    t.text "content"
     t.integer "cost", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
