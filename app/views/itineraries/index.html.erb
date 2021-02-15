@@ -2,11 +2,11 @@
   <h1 class="bg-warning text-white text-center">しおり一覧</h1>
 </div><br>
 <div class="container">
-  <% unless @itineraries.present? %>
-      <h2 class="text-danger text-center">しおりがありません</h2>
-  <% else %>
-    <% @groups.each do |group| %>
-      <h2 class="text-info"><%= group.name %></h2><br>
+  <% @groups.each do |group| %>
+    <h2 class="text-info"><%= group.name %></h2><br>
+    <% unless group.itineraries.present? %>
+      <h2 class="text-danger">しおりがありません</h2>
+    <% else %>
       <% group.itineraries.each do |itinerary| %> 
         <ul>
           <div class="row">      
