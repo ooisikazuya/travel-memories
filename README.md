@@ -82,7 +82,7 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
   #### URL
   
-  https://immense-falls-26161.herokuapp.com/
+  https://immense-falls-26161.herokuapp.com
 
   #### テストユーザー情報
   - ニックネーム  kazu　
