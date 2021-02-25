@@ -29,8 +29,6 @@
                 <%= link_to "HOME", groups_path, class: "post nav-item nav-link" %>
               <% end %>
             </li>
-          <% end %>
-          <% if user_signed_in? %>
             <li class="nav-item">
               <%= link_to "しおりの作成・閲覧", itineraries_path, class: "post nav-item nav-link #{controller.controller_name == 'itineraries' ? 'active' : ''}" %>                         
             </li>
@@ -44,25 +42,24 @@
                 <%= link_to "グループ作成・加入", new_group_path, class: "post nav-item nav-link" %>
               <% end %>
             </li>
-          <% end %>
-          <li class="nav-item">
-            <% if user_signed_in? %>
+            <li class="nav-item">
               <% if controller.controller_name == 'users' %>
                 <%= link_to "会員情報", user_path(current_user), class: "nav-item nav-link #{controller.action_name == 'show' ? 'active' : ''} || #{controller.action_name == 'edit' ? 'active' : ''}" %>
               <% else %>
                 <%= link_to "会員情報", user_path(current_user), class: "nav-item nav-link" %>
-              <% end %>
-            <% else %>
-              <%= link_to "会員登録", new_user_registration_path, class: "post nav-item nav-link #{controller.controller_name == 'registrations' ? 'active' : ''}" %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <% if user_signed_in? %>
+              <% end %>        
+            </li>
+            <li class="nav-item">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-item nav-link' %>
-            <% else %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "会員登録", new_user_registration_path, class: "post nav-item nav-link #{controller.controller_name == 'registrations' ? 'active' : ''}" %>
+            </li>
+            <li class="nav-item">
               <%= link_to "ログイン", new_user_session_path, class: "post nav-item nav-link #{controller.controller_name == 'sessions' ? 'active' : ''}" %>
-            <% end %>
-          </li>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
