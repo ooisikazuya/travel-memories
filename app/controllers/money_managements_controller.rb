@@ -21,6 +21,7 @@ class MoneyManagementsController < ApplicationController
     @user = current_user
     @money_management = @user.money_managements.new(create_money_management_params)
     @money_management.save!
+    flash[:notice] = "帳簿を追加しました！"
     redirect_to money_managements_path
   end
 

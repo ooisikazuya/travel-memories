@@ -23,6 +23,7 @@ class ItinerariesController < ApplicationController
 
   def create
     itinerary = Itinerary.create(itinerary_params)
+    flash[:notice] = "しおりを追加しました！"
     redirect_to itineraries_path
   end
 
