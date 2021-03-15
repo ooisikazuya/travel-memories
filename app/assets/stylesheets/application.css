@@ -14,11 +14,25 @@
  *= require_self
  */
 
-nav{background-color: skyblue;}
-.fa-plane{color: skyblue;}
-.fa-suitcase-rolling{color: gray;}
-.fa-train{color: forestgreen;}
-.fa-car{color: red;}
-.fa-wallet{color: brown;}
-.fa-book-open{color: lightgray;}
-.fa-image{color: #17a2b8;}
+nav{
+  background-color: skyblue;
+}
+.fa-plane{
+  color: skyblue;
+}
+.fa-suitcase-rolling{
+  color: gray;}
+.fa-train{color: forestgreen;
+}
+.fa-car{
+  color: red;
+}
+.fa-wallet{
+  color: brown;
+}
+.fa-book-open{
+  color: lightgray;
+}
+.fa-image{
+  color: #17a2b8;
+}
