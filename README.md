@@ -34,7 +34,7 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 - **旅費の管理**
 
-![スクリーンショット 2021-05-06 17 49 09](https://user-images.githubusercontent.com/74053238/117269692-7a499400-ae93-11eb-9bca-849f5c058b4d.png)
+![スクリーンショット 2021-05-06 18 03 21](https://user-images.githubusercontent.com/74053238/117271760-7ae32a00-ae95-11eb-8c65-12cba1af61f3.png)
 
 ![スクリーンショット 2021-05-06 17 45 39](https://user-images.githubusercontent.com/74053238/117269868-9f3e0700-ae93-11eb-8207-5dfd9ba3ef84.png)
 
