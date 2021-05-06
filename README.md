@@ -25,7 +25,8 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 ## 使い方
 - **しおりの作成・閲覧**
 
-![スクリーンショット 2021-02-14 15 25 57](https://user-images.githubusercontent.com/74053238/107870789-d5946780-6ede-11eb-94cf-27d76ce3f9db.png)
+![スクリーンショット 2021-05-06 17 19 21](https://user-images.githubusercontent.com/74053238/117269231-11621c00-ae93-11eb-8d3a-4122f0ce158c.png)
+
 
 旅行のしおりを作成・閲覧することができます。
 
@@ -33,9 +34,9 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 - **旅費の管理**
 
-![スクリーンショット 2021-02-14 15 33 29](https://user-images.githubusercontent.com/74053238/107870817-22783e00-6edf-11eb-929b-51f97cf39e4d.png)
+![スクリーンショット 2021-05-06 17 49 09](https://user-images.githubusercontent.com/74053238/117269692-7a499400-ae93-11eb-9bca-849f5c058b4d.png)
 
-![スクリーンショット 2021-02-14 15 43 05](https://user-images.githubusercontent.com/74053238/107870824-45a2ed80-6edf-11eb-8705-46a7d425673d.png)
+![スクリーンショット 2021-05-06 17 45 39](https://user-images.githubusercontent.com/74053238/117269868-9f3e0700-ae93-11eb-8207-5dfd9ba3ef84.png)
 
 
 旅行にかかる必要経費、お土産などの旅行中に使ったお金を記録することができます。
@@ -46,9 +47,9 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 - **グループ作成・加入**
 
-![スクリーンショット 2021-02-14 15 46 45](https://user-images.githubusercontent.com/74053238/107870831-60756200-6edf-11eb-858d-88ed39d4f988.png)
+![スクリーンショット 2021-05-06 17 03 58](https://user-images.githubusercontent.com/74053238/117270032-c5fc3d80-ae93-11eb-80fb-3adfd95ab335.png)
 
-![スクリーンショット 2021-02-14 15 48 26](https://user-images.githubusercontent.com/74053238/107870845-77b44f80-6edf-11eb-837a-99083ba38220.png)
+![スクリーンショット 2021-05-06 17 05 08](https://user-images.githubusercontent.com/74053238/117270164-e4facf80-ae93-11eb-9d1e-5a73c29f72ee.png)
 
 
 グループリーダーとしてグループを作成したり、グループIDを教えてもらってグループに加入することができます。
@@ -57,7 +58,7 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 - **会員情報**
 
-![スクリーンショット 2021-02-14 15 49 27](https://user-images.githubusercontent.com/74053238/107870854-8ef33d00-6edf-11eb-9069-b71a120615c9.png)
+![スクリーンショット 2021-05-06 17 54 13](https://user-images.githubusercontent.com/74053238/117270441-2d19f200-ae94-11eb-894b-63039baff74c.png)
 
 
 会員情報の変更、プロフィール画像の選択をすることができます。
@@ -78,7 +79,7 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 - Ruby on Rails 5.2.4.4
 
 ### デプロイ
-- heroku 7.47.12
+- heroku 7.53.0
 
   #### URL
   
