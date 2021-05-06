@@ -20,7 +20,7 @@
     <% @groups.each do |group| %>
       <h2 class="text-info"><%= group.name %></h2><br>
       <% unless group.itineraries.present? %>
-        <h2 class="text-danger">しおりがありません</h2>
+        <h2 class="text-danger">しおりがありません。”新しいしおりの追加”ボタンをクリックしてしおりを追加し、編集しましょう。</h2>
       <% else %>
         <% group.itineraries.each do |itinerary| %> 
           <ul>

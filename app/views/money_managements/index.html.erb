@@ -6,7 +6,7 @@
   <% end %>
 </div>
 <div class="container">
-  <h1 class="bg-warning text-white text-center">お金の管理</h1>
+  <h1 class="bg-warning text-white text-center">旅費の管理</h1>
 </div><br>
 <div class="container">
   <div class="row">      
@@ -15,7 +15,7 @@
     </div>
   </div><br><br>
   <% unless @money_managements.present? %>
-    <h2 class="text-danger text-center">帳簿がありません</h2>
+    <h2 class="text-danger">帳簿がありません。”新しい帳簿の追加”ボタンをクリックして帳簿を追加し、記録しましょう。</h2>
   <% end %>
   <% @money_managements.each do |money_management| %>
     <ul>

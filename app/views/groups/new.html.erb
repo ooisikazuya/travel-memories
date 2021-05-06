@@ -21,7 +21,7 @@
 </div><br>
 <%= form_for @group do |f| %>
   <div class="container">
-    <h2 class="text-info">グループ作成</h2>
+    <h2 class="bg-info text-white text-center">グループ作成</h2>
     <p class="text-primary">あなたがグループリーダーとなり、グループの作成に必要なID・グループ名を決めてください。</p>
   </div><br>
   <div class="container">
@@ -29,7 +29,7 @@
     <div class="row">      
       <div class="col-5">
         <div class="form-group">
-          <%= f.text_field :name, class: "form-control border-info" %>
+          <%= f.text_field :name, class: "form-control border-info", placeholder: "（例）仲良し４人組" %>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="row">      
       <div class="col-5">
         <div class="form-group">
-          <%= f.text_field :password, class: "form-control border-info" %>
+          <%= f.text_field :password, class: "form-control border-info", placeholder: "グループIDを入力" %>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
 <% end %>
 <%= form_tag(join_groups_path, method: :post) do %>
   <div class="container">
-    <h2 class="text-info">グループ加入</h2>
+    <h2 class="bg-info text-white text-center">グループ加入</h2>
     <p class="text-primary">グループリーダーにグループIDを教えてもらい、こちらに入力してください。</p>
   </div><br>
   <div class="container">
@@ -64,7 +64,7 @@
     <div class="row">      
       <div class="col-5"> 
         <div class="form-group">
-          <%= text_field_tag :password, "", class: "form-control border-info" %>
+          <%= text_field_tag :password, "", class: "form-control border-info", placeholder: "グループIDを入力" %>
         </div>  
       </div>
     </div>

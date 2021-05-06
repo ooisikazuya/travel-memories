@@ -19,7 +19,7 @@
   <% if @records.present? %>
     <%= pie_chart @records.group(:category).sum(:cost), suffix: @money_management.currency %>
   <% else %>
-    <h2 class="text-danger text-center">記録がありません</h2>
+    <h2 class="text-danger">記録がありません。”記録する”ボタンをクリックして記録しましょう。</h2>
   <% end %>
 </div><br>
 <div class="container">

@@ -108,13 +108,13 @@
             <div class="col-7">
               <div class="form-group">
                 <lavel class="text-info">名称（路線名・飲食店名・ホテル名など）</lavel>
-                <%= text_field_tag "content", "", class: "form-control border-info" %>
+                <%= text_field_tag "content", "", class: "form-control border-info", placeholder: "名称を入力" %>
               </div>
             </div>
             <div class="col-3">
               <div class="form-group float-right">
                 <lavel class="text-info">金額</lavel>
-                <%= number_field_tag "cost", Integer, min: 0, class: "form-control border-info" %>
+                <%= number_field_tag "cost", Integer, min: 0, class: "form-control border-info", placeholder: "数字を入力" %>
               </div>
             </div>
             <div class="row"> 
