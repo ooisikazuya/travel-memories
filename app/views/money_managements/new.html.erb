@@ -5,9 +5,9 @@
   <div class="container">
     <h3 class=" text-info">帳簿名</h3><br>
     <div class="row">         
-      <div class="col-5">      
+      <div class="col-7">      
         <div class="form-group">
-          <%= f.text_field :name, class: "form-control border-info", required: true %>
+          <%= f.text_field :name, class: "form-control border-info", placeholder: "（例）東京旅行２０２１の記録", required: true %>
         </div>
       </div>
     </div>
@@ -17,13 +17,13 @@
     <div class="row">         
       <div class="col-5">      
         <div class="form-group">
-          <%= f.label :数字, class: "text-info" %>
-          <%= f.number_field :budget, min: 0, class: "form-control border-info", required: true %>
+          <%= f.label :金額, class: "text-info" %>
+          <%= f.number_field :budget, min: 0, class: "form-control border-info", placeholder: "数字を入力", required: true %>
         </div>
       </div>
-      <div class="col-3">
-        <%= f.label :通貨, class: "text-info" %>      
-        <%= f.text_field :currency, class: "form-control border-info", required: true %>
+      <div class="col-4">
+        <%= f.label :単位, class: "text-info" %>      
+        <%= f.text_field :currency, class: "form-control border-info", placeholder: "円、ドルなど", required: true %>
       </div>
     </div>
   </div><br><br>
