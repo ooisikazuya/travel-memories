@@ -1,10 +1,4 @@
-<div class="container">
-  <% if flash[:notice] %>
-    <h2 class="flash bg-primary text-white text-center">
-      <%= flash[:notice] %>
-    </h2>
-  <% end %>
-</div>
+<%= render file: "layouts/flash.html.erb" %>
 <% if @groups.present? %>
   <div class="container">
     <div class="row"> 
