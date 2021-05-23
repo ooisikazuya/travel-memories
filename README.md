@@ -67,8 +67,8 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 ## 使用技術
 ### フロントエンド
-- HTML/CSS
-- JavaScript/jQuery
+- HTML / CSS
+- JavaScript / jQuery
 - devise
 - chartkick
 - carrierwave
