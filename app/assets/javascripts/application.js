@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function() {
       reader.readAsDataURL(input.files[0]);
     }
   }
-  $("#user_image").change(function(){
+  $("#user_image").change(function() {
     readURL(this);
   });
 });
