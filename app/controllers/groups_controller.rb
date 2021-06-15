@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
     unless group
       flash[:notice] = "グループが見つかりませんでした"
       @group = Group.new
-      render :new and return
+      redirect_to new_group_path and return
     end
     group.group_users.find_or_create_by(user: current_user)
     flash[:notice] = "グループに加入しました！"
