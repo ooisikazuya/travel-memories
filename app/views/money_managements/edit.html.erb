@@ -41,7 +41,7 @@
                 <%= select_tag "category_#{i}", options_for_select([['交通費', '交通費'], ['食費', '食費'], ['ホテル・宿', 'ホテル・宿'], ['お土産', 'お土産'], ['観光名所・施設', '観光名所・施設'], ['その他', 'その他']], selected: "#{record.category}"), class: "form-control border-info" %>
               </div>
               <div class="col-8">
-                <%= link_to "", money_management_record_path(@money_management, record), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger float-right far fa-trash-alt fa-lg" %>
+                <%= link_to "", money_management_record_path(@money_management, record), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger float-right far fa-trash-alt fa-lg" %>
               </div>
             </div>
             <div class="row">      
