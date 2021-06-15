@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <% if @events.present? %>
-        <% @events.each_with_index do |event, i| %> 
+        <% @events.each_with_index do |event, i| %>
           <div class="col-10">
             <div class="form-group">
               <%= hidden_field_tag "itinerary_event_id_#{i}", event.id %>
@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="col-2 d-flex align-items-center">
-            <%= link_to "", itinerary_itinerary_event_path(@itinerary, event), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-danger far fa-trash-alt fa-lg" %>
+            <%= link_to "", itinerary_itinerary_event_path(@itinerary, event), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger far fa-trash-alt fa-lg" %>
           </div>
           <% if @events.count - 1 > i %>
             <div class="container">
