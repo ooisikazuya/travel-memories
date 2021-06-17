@@ -3,23 +3,23 @@
   <div class="container">
     <div class="row"> 
       <div class="col-6">
-        <h5 class="text-info">しおりの作成はこちらから！⬇︎</h5>
+        <h5 class="text-info">しおりの作成はこちらから！<i class="fas fa-arrow-down faa-vertical animated"></i></h5>
         <div class="card">
           <h5 class="card-header bg-danger text-white">しおりの作成・閲覧</h5>
           <div class="card-body">
             <p class="card-text">旅行のしおりを簡単に作成できます。しおりに書く内容はそれぞれにお任せします。</p>
-            <i class="fas fa-book-open fa-3x"></i>
+            <i class="fas fa-book-open fa-3x faa-float animated"></i>
             <%= link_to "編集・閲覧", itineraries_path, class: 'btn btn-success text-white float-right' %>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <h5 class="text-info">旅費の管理はこちらから！⬇︎</h5>
+        <h5 class="text-info">旅費の管理はこちらから！<i class="fas fa-arrow-down faa-vertical animated"></i></h5>
         <div class="card">
           <h5 class="card-header bg-primary text-white">旅費の管理</h5>
           <div class="card-body">
             <p class="card-text">旅行の際にかかる必要経費、お土産などの旅行中に使ったお金を簡単に記録できます。</p>
-            <i class="fas fa-wallet fa-3x"></i>
+            <i class="fas fa-wallet fa-3x faa-float animated"></i>
             <%= link_to "記録", money_managements_path, class: 'btn btn-success text-white float-right' %>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="card-body">
             <table class="table">
               <tbody>
-                <% @groups.each do |group|%>
+                <% @groups.each do |group| %>
                   <tr>
                     <td class="h5 text-info"><%= group.name %></td>                  
                     <td>しおりの数 <%= group.itineraries.length %></td>
