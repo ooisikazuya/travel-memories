@@ -31,7 +31,7 @@
         <div class="field text-info">
           <%= f.label :パスワード %>
           <% if @minimum_password_length %>
-            <lavel>(<%= @minimum_password_length %>文字以上)</lavel>
+            <lavel>（ <%= @minimum_password_length %>文字以上 ）</lavel>
           <% end %><br />
           <%= f.password_field :password, class: "form-control border-info", autocomplete: "new-password" %>
         </div>
