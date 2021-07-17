@@ -36,7 +36,7 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
+// しおりの内容の順番の入れ替え
 function sort(index) {
   var textBefore = $('#itinerary_event_' + index).html()
   var textAfter = $('#itinerary_event_' + (index + 1)).html()
