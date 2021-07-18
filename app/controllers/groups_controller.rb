@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_user, only: [:index, :create]
+  before_action :set_user, only: [:index, :create, :join]
 
   def index
     @groups = Group.where(id: @user.group_users.pluck(:group_id))
@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
       @group = Group.new
       redirect_to new_group_path and return
     end
-    group.group_users.find_or_create_by(user: current_user)
+    group.group_users.find_or_create_by(user: @user)
     flash[:notice] = "グループに加入しました！"
     redirect_to groups_path
   end
