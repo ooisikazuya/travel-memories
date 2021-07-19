@@ -47,7 +47,7 @@ TRAVEL-MEMORIESは旅行に関する記録に特化したアプリです。
 
 - **グループ作成・加入**
 
-![スクリーンショット 2021-05-06 17 03 58](https://user-images.githubusercontent.com/74053238/117270032-c5fc3d80-ae93-11eb-80fb-3adfd95ab335.png)
+![スクリーンショット 2021-07-19 11 19 15](https://user-images.githubusercontent.com/74053238/126093649-4065f4b7-b5ea-448e-9235-6f75891df8e4.png)
 
 ![スクリーンショット 2021-05-06 17 05 08](https://user-images.githubusercontent.com/74053238/117270164-e4facf80-ae93-11eb-9d1e-5a73c29f72ee.png)
 
