@@ -50,8 +50,4 @@ class MoneyManagementsController < ApplicationController
   def update_money_management_params
     params.permit(:budget)
   end
-
-  def record_params
-    params.permit(:category, :content, :cost)
-  end
 end
